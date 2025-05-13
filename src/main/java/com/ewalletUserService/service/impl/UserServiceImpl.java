@@ -35,7 +35,7 @@ public class UserServiceImpl implements UserService {
     public UserDto getUserById(Long id) {
         User user = userRepository
                 .findById(id)
-                .orElseThrow(() -> new RuntimeException("Id Not Found"));
+                .orElseThrow(() -> new RuntimeException("User Not Found"));
         return UserMapper.mapToUserDto(user);
     }
 
@@ -57,7 +57,7 @@ public class UserServiceImpl implements UserService {
             if(values.get("role") != null) user.setRole((String) values.get("role"));
             return userRepository.save(user);
         })
-                .orElseThrow(() -> new RuntimeException("Id Not Found")));
+                .orElseThrow(() -> new RuntimeException("User Not Found")));
     }
 
     @Override

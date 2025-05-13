@@ -47,9 +47,9 @@ public class UserController {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> deleteUser(@PathVariable Long id) {
         if(userService.deleteUser(id)) {
-            return ResponseEntity.ok("User account has been deleted successfully");
+            return ResponseEntity.ok("User has been deleted successfully");
         } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User account is not found");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User is not found");
         }
     }
 }

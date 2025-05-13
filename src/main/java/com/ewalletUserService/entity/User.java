@@ -8,9 +8,9 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "userAccount")
+@Table(name = "users")
 @Entity
-public class UserAccount {
+public class User {
 
     @Id
     @Column(name = "id")
